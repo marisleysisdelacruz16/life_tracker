@@ -1,0 +1,29 @@
+.ExerciseCard {
+    width: 360px;
+    height: 220px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 16px 32px;
+    background: var(--gold-linear-gradient)
+}
+
+.ExerciseCard .card-header, .ExerciseCard .card-meta, .ExerciseCard .card-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.ExerciseCard .card-header .title, .ExerciseCard .card-meta small {
+    color: black
+}
+
+.ExerciseCard .card-meta small.category {
+    color: black;
+    border: 1px solid var(--pure-white);
+    border-radius: 8px;
+    padding: 8px 12px
+}
+

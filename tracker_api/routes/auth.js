@@ -1,7 +1,5 @@
 const express = require("express")
-const {requireAuthenticatedUser } = require("../middleware/security")
 const User = require("../models/user")
-const Order = require("../models/order")
 const {createUserJwt} = require("../utils/tokens")
 const security = require("../middleware/security")
 const router = express.Router()
@@ -31,7 +29,7 @@ router.get("/me", security.requireAuthenticatedUser, async (req,res,next) => {
     const {email} = res.locals.user
     const user = await User.fetchUserByEmail(email)
     const publicUser = User.makePublicUser(user)
-    return res.status(200).json({user: publicUser})
+    return res.status(200).json({ user: publicUser })
   }
   catch (err) {
     next (err)

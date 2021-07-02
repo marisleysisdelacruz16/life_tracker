@@ -6,6 +6,7 @@ CREATE TABLE users (
   username    TEXT NOT NULL UNIQUE,
   email       TEXT NOT NULL UNIQUE CHECK (POSITION('@' IN email) > 1),
   is_admin    BOOLEAN NOT NULL DEFAULT FALSE,
+  created_at  TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
 CREATE TABLE exercises (
@@ -14,7 +15,7 @@ CREATE TABLE exercises (
     category  TEXT,
     duration  INTEGER,
     intensity INTEGER,
-    user_id   INTEGER REFERENCES users(id) on DELETE CASCADE,
-    timestamp  TIMESTAMP DEFAULT NOW()
+    user_id   INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
 );
 

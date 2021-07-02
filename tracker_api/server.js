@@ -5,6 +5,8 @@ const { PORT } = require("./config")
 const { NotFoundError } = require("./utils/errors")
 const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
+const activityRouter = require("./routes/activity")
+const exerciseRouter = require("./routes/exercise")
 
 const app = express()
 
@@ -21,7 +23,8 @@ app.use(morgan("tiny"))
 // if it does attach decoded user to rec.locals
 app.use(security.extractUserFromJwt)
 app.use("/auth", authRoutes)
-//apps.use("/orders",orderRoutes)
+app.use("/info", activityRouter)
+app.use("/exercise", exerciseRouter)
 
 
 /** Handle 404 errors -- this matches everything */

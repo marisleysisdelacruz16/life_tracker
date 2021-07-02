@@ -1,0 +1,38 @@
+.InputBar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 8px 0;
+    flex: 1 1
+}
+.InputBar label {
+    margin-bottom: 5px;
+    color: var(--pure-white)
+}
+
+.InputBar input {
+    height: 60px;
+    padding: 0 15px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    background: transparent;
+    color: var(--pure-white)
+}
+
+.InputBar input::-webkit-input-placeholder {
+    color: var(--border-color)
+}
+
+.InputBar input:-ms-input-placeholder {
+    color: var(--border-color)
+}
+
+.InputBar input::placeholder {
+    color: var(--border-color)
+}
+
+.InputBar input::-webkit-calendar-picker-indicator {
+    -webkit-filter: invert(1);
+}

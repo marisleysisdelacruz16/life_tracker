@@ -20,7 +20,6 @@ const createUserJwt = (user) => {
     // returns result of calling generateToken on payload
     const payload = {
     email: user.email,
-    username: user.username,
     isAdmin: user.isAdmin || false,
     }
 

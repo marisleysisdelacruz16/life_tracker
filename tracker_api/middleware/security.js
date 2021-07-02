@@ -5,8 +5,10 @@ const {UnauthorizedError} = require("../utils/errors")
 const jwtFrom = ({headers}) => {
     // takes in a request object and checks to see if the request has an authorization header
     // extracts token from header and returns it if it exists
+    console.log(headers)
     if (headers?.authorization) {
         const [scheme,token] = headers.authorization.split(" ")
+        console.log(scheme,"scheme")
         if (scheme.trim() === "Bearer") {
             return token
         }
@@ -30,6 +32,7 @@ const extractUserFromJwt = (req,res,next) => {
 }
 
 const requireAuthenticatedUser = (req,res,next) => {
+    console.log("authenticating user")
     //checks if user exists on res.locals and user has an email
     try{
         const {user} = res.locals

@@ -3,48 +3,39 @@ const Exercise = require("../models/exercise")
 const security = require("../middleware/security")
 const router = express.Router()
 
-router.post("/", security.requireAuthenticatedUser, async(req,res,next) => {
+router.post("/add", security.requireAuthenticatedUser, async(req,res,next) => {
   try {
-    const {user} = res.locals
-    const exercise = await Exercise.createExercise({user, exercise:req.body})
-    return res.status(201).json({exercise})
+      // create new exercise log
+    const { user } = res.locals
+    const exercise = await Exercise.createExercise({ exercise:req.body, user })
+    return res.status(201).json({ exercise })
   } catch (err) {
     next (err)
   }
 })
 
-router.get("/:exerciseId", async (req,res,next) => {
+
+router.get("/exercise", security.requireAuthenticatedUser, async (req, res, next) => {
+    //lists all Exercises 
   try {
-    //get single order
-    const {orderId} = req.params
-    const order = await Order.fetchOrderById(orderId)
-    return res.status(200).json({order})
-  }
-  catch (err) {
-    next(err)
-  }
-})
-
-
-
-router.get("/", async (req, res, next) => {
-    //calls listsOrdersForUser 
-  try {
-    const order = await Order.listOrdersForUser()
-    return res.status(200).json({ order })
+    const { user } = res.locals
+    const exercise = await Exercise.listAllExercises({ user })
+    return res.status(200).json({ exercise })
   } catch (err) {
     next(err)
   }
 })
 
-router.post("/", async (req, res, next) => {
-    // calls createOrder
-  try {
-    const order = await Order.createOrder()
-    return res.status(201).json({ order })
-  } catch (err) {
-    next(err)
-  }
+router.get("/:exerciseId", async (req, res, next) => {
+  //gets one exercise
+try {
+  const {exerciseId} = req.params
+  const exercise = await Exercise.fetchExerciseById(exerciseId)
+  return res.status(200).json({ exercise })
+} catch (err) {
+  next(err)
+}
 })
+
 
 module.exports = router
