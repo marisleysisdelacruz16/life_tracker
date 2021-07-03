@@ -5,8 +5,8 @@ const activityRouter = express.Router()
 
 activityRouter.get("/information", security.requireAuthenticatedUser, async (req,res,next) => {
     try {
-        const amount = await Activity.exerciseTotal()
-        res.status(200).json({ total: amount })
+        const amount = await Activity.totalExerciseMinutes()
+        return res.status(200).json({ total: amount })
     }
     catch(error)
     {

@@ -26,32 +26,6 @@ return (
 }
 
 function App() {
-/*   const [user, setUser] = useState({})
-  const [isFetching, setIsFetching] = useState(false)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    const fetchUser = async() => {
-      const { data, error } = await apiClient.fetchUserFromToken()
-      if (data) {
-        setUser(data.user)
-
-      if (error) setError(error)
-      }
-    }
-
-    const token = localStorage.getItem("life_tracker_token")
-    if (token) {
-      apiClient.setToken(token)
-      fetchUser()
-  }
-}, [])
-
-const handleLogout = async () => {
-  await apiClient.logoutUser()
-  setUser({})
-  setError(null)
-} */
 
   return (
     <div className="App">
@@ -61,8 +35,8 @@ const handleLogout = async () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/activity" element={<AuthorizedUser element = {<ActivityPage />} /> } />
-          <Route path="/exercise" element={<AuthorizedUser elemenent = {<ExercisePage />} />}/>
+          <Route path="/activity/*" element={<AuthorizedUser element = {<ActivityPage />} /> } />
+          <Route path="/exercise/*" element={<AuthorizedUser element = {<ExercisePage />} />}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

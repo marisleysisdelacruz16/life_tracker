@@ -10,7 +10,6 @@ export default function ExercisePage() {
   return (
     <div className="ExercisePage">
       <Banner title="Exercise" />
-      <h1> Hello </h1>
       <div className="content">
         <Routes>
           <Route path="/" element={<ExerciseOverview />} />

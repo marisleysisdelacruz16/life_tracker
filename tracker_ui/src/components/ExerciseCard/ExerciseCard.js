@@ -7,7 +7,6 @@ export default function ExerciseCard({ exercise }) {
     <div className="ExerciseCard">
       <div className="card-header">
         <h2 className="title">{exercise.name}</h2>
-        {exercise.image ? <img src={exercise.imageUrl} alt="exercise" /> : null}
       </div>
 
       <div className="card-stats">

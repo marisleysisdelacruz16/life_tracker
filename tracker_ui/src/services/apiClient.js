@@ -41,7 +41,7 @@ class ApiClient {
     }
 
     async fetchUserActivity() {
-        return await this.request({ endpoint: `activity`, method: `GET` })
+        return await this.request({ endpoint: `activity/information`, method: `GET` })
       }
 
     async loginUser(credentials){
@@ -53,7 +53,7 @@ class ApiClient {
     }
 
     async createExercise(exercise) {
-        return await this.request({ endpoint: `add`, method: `POST` , data: { exercise } })
+        return await this.request({ endpoint: `exercise/add`, method: `POST` , data:  exercise })
     }
 
     async fetchUserFromToken() {
@@ -61,7 +61,7 @@ class ApiClient {
     }
 
     async fetchUserExercise() {
-        return await this.request({ endpoint: `exercise`, method: `GET` })
+        return await this.request({ endpoint: `exercise/exercise`, method: `GET` })
     }
 }
 

@@ -10,10 +10,10 @@ export const ActivityContextProvider = ({ children }) => {
   const { exercises, initialized: exerciseInitialized } = useExerciseContext()
   const [initialized, setInitialized] = useState(false)
   const [activity, setActivity] = useState({
-    averageIntensity: 0,
-    totalExerciseMinutes: 0
+    totalExerciseMinutes: 0,
   })
 
+  const itemTracked = exercises.length
   const allInitialized = [exerciseInitialized].every((v) => Boolean(v))
 
   useEffect(() => {
@@ -22,7 +22,6 @@ export const ActivityContextProvider = ({ children }) => {
       if (data) {
         setActivity((s) => ({
           ...s,
-          averageIntensity: data.averageIntensity?.avg || 0,
           totalExerciseMinutes: data.totalExerciseMinutes?.sum || 0,
         }))
       }
@@ -32,13 +31,13 @@ export const ActivityContextProvider = ({ children }) => {
       if (allInitialized && !initialized) {
         fetchUserActivity()
         setInitialized(true)
-      } else if (allInitialized && exercises.length !== 0) {
+      } else if (allInitialized && itemTracked !== 0) {
         fetchUserActivity()
         setInitialized(true)
       }
     }
     
-  }, [user?.username, exercises.length, allInitialized])
+  }, [user?.username, itemTracked, allInitialized])
 
   const activityValue = { activity, setActivity }
 
@@ -52,8 +51,5 @@ export const ActivityContextProvider = ({ children }) => {
 export const useActivityContext = () => useContext(ActivityContext)
 
 export const summaryInformation = (activity) => ({
-  totalExerciseMinutes: activity.totalExerciseMinutes
-})
-export const extraInformation = (activity) => ({
-  averageIntensity: activity.averageIntensity
+  totalExerciseMinutes: activity.totalExerciseMinutes,
 })

@@ -26,12 +26,12 @@
 }
 
 .Button.primary {
-    color: var(--pure-white);
+    color: black;
     background: var(--color-primary)
 }
 
 .Button.primary.gold {
-    color: var(--pure-white);
+    color: black;
     background: var(--accent-gold)
 }
 

@@ -8,8 +8,8 @@ export default function SummaryPage ({ stat, isAverage = true, color = "red", si
         <p>{stat.title}</p>
         <h1>{isAverage ? formatAverage(stat.value) : formatStatistic(stat.value)}</h1>
         <svg
-          height="100%"
-          width="100%"
+          height="50%"
+          width="50%"
           viewBox={`0 0 220 360`}
           style={{
             position: "absolute",

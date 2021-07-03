@@ -18,15 +18,14 @@ Deployed Application: [Lifetracker Deployed Site](ADD_LINK_HERE)
 - [X] When a user first authenticates, they should be redirected to an authenticated view (i.e the detailed activity page). When they sign out, all frontend data should be reset.
 - [ ] Users have access to an overview Activity page that show one summary statistic about each of the 3 types of activity tracked.
 - [X] The API should have a `security` middleware that only allows authenticated users to access resources and only allows users to access resources about themselves. 
-- [ ] Users should have the ability to track at least **1** types of activities (i.e Nutrition, Exercise, Sleep, etc.). Each activity should be tracked on separate pages.
+- [X] Users should have the ability to track at least **1** types of activities (i.e Nutrition, Exercise, Sleep, etc.). Each activity should be tracked on separate pages.
 - [ ] Deployed website with Heroku & Surge. 
 
 **Detailed Activity Page:**
-- [ ] The detailed activity page should display a feed of all previous tracked activities.
-- [ X ] The detailed activity should contain a form to contain relevant information. (i.e if tracking nutrition this form allows the user to capture calories, timestamp, image, category, etc.) 
-- [X ] The activity tracked should be given a unique id for easy lookup.
-  `TODO://` Add link to table schema in the link code below. Your file should end in `.sql` and show your schema for the detailed activities table. (🚫 Remove this paragraph after adding schema link)
-  * [Table Schema](📝ADD LINK TO TABLE SCHEMA.sql HERE!) 
+- [X] The detailed activity page should display a feed of all previous tracked activities.
+- [X] The detailed activity should contain a form to contain relevant information. (i.e if tracking nutrition this form allows the user to capture calories, timestamp, image, category, etc.) 
+- [] The activity tracked should be given a unique id for easy lookup.
+  * [Table Schema](./tracker_api/life-tracker-schema.sql) 
 
 
 
@@ -40,30 +39,38 @@ Implement any of the following features to improve the application:
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
+<iframe src="https://giphy.com/embed/FYNxUTWbNsFwclJs4J" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/FYNxUTWbNsFwclJs4J">via GIPHY</a></p>
 
-`ADD_EMBEDDED_CODE_HERE`
+<iframe src="https://giphy.com/embed/OVzXhOKIxjJNlwA3s9" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/OVzXhOKIxjJNlwA3s9">via GIPHY</a></p>
+
+<iframe src="https://giphy.com/embed/FvB16e0A4HJGFnu1wx" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/FvB16e0A4HJGFnu1wx">via GIPHY</a></p>
+
+<iframe src="https://giphy.com/embed/MdBKszQznGo3jxtM4J" width="480" height="212" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MdBKszQznGo3jxtM4J">via GIPHY</a></p>
+
+
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-[Add your response here]
+Yes, all of the labs helped especially the student store pt 2 because it worked with hooks and contexts.
+
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-[Add your response here]
+If I had more time, I would've added more activities.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-[Add your response here]
+Overall, my website has most of the required features. I wasn't able to get the unique id for each exercise so I would work on this for next time. Also, I would've liked to deploy the website. 
 
 ### Open-source libraries used
 
 - Add any links to open-source libraries used in your project.
 
+
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 
-[Add your response here]
+I would like to give a shout out to Matt and Samara for helping me ! 

@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom"
 import { useActivityContext } from "../../contexts/activity"
 import { summaryInformation } from "../../contexts/activity"
-import { extraInformation } from "../../contexts/activity"
 import SummaryPage from "../SummaryPage/SummaryPage"
 import Button from "../Button/Button"
 import "./ActivityPage.css"
 
 const Actions = ({ title = "Activity Feed" }) => {
   const navigate = useNavigate()
+
   return (
     <div className="actions">
       <h2 className="heading">{title}</h2>
@@ -28,8 +28,7 @@ const Actions = ({ title = "Activity Feed" }) => {
 
 export default function ActivityPage() {
     const { activity } = useActivityContext()
-    const SummaryInfo = summaryInformation(activity)
-    const extraInfo = extraInformation(activity)
+    const summaryInfo = summaryInformation(activity)
 
   return (
     <div className="ActivityPage">
@@ -40,16 +39,7 @@ export default function ActivityPage() {
             <SummaryPage
               color="aqua"
               isAverage={false}
-              stat={{ title: `Total Exercise Minutes`, value: SummaryInfo.totalExerciseMinutes }}
-            />
-          </div>
-          <h4>More Details</h4>
-          <div className="more">
-            <SummaryPage
-              stat={{ title: `Avg Exercise Intensity`, value: extraInfo.averageIntensity }}
-              isAverage={true}
-              color="aqua"
-              size="small"
+              stat={{ title: `Total Exercise Minutes`, value: summaryInfo.totalExerciseMinutes }}
             />
           </div>
         </div>
@@ -57,21 +47,3 @@ export default function ActivityPage() {
     </div>
   )
 }
-
-/* const [isFetching, setIsFetching] = useState(false)
-const [exercises,setExercises] = useState([])
-const [error, setError] = useState(null)
-
-useEffect(() => {
-    const fetchExercises = async () => {
-        setIsFetching(true)
-
-        const { data, error } = await apiClient.listExercises()
-        if (data) setExercises(data.exercises)
-        if (error) setError(error)
-
-        setIsFetching(false)
-    }
-}) 
-
-} */

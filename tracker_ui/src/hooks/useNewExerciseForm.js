@@ -10,8 +10,8 @@ export const useNewExerciseForm = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [form, setForm] = useState({
     name: "",
-    duration: 0,
-    intensity: 0,
+    duration: "" ,
+    intensity: "",
     category: "",
   })
   const [errors, setErrors] = useState({})

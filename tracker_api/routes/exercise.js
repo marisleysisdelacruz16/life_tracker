@@ -29,7 +29,7 @@ router.get("/exercise", security.requireAuthenticatedUser, async (req, res, next
 router.get("/:exerciseId", async (req, res, next) => {
   //gets one exercise
 try {
-  const {exerciseId} = req.params
+  const { exerciseId } = req.params
   const exercise = await Exercise.fetchExerciseById(exerciseId)
   return res.status(200).json({ exercise })
 } catch (err) {

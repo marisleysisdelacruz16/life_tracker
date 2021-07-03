@@ -16,6 +16,10 @@
     color: black
 }
 
+.h2 {
+    color:black
+}
+
 .ExerciseOverview .feed {
     display: flex;
     flex-direction: row;

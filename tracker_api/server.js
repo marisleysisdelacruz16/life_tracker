@@ -23,7 +23,7 @@ app.use(morgan("tiny"))
 // if it does attach decoded user to rec.locals
 app.use(security.extractUserFromJwt)
 app.use("/auth", authRoutes)
-app.use("/info", activityRouter)
+app.use("/activity", activityRouter)
 app.use("/exercise", exerciseRouter)
 
 

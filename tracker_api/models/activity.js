@@ -1,15 +1,17 @@
 const db = require("../db")
 
 class Activity {
-    static async totalExercise () {
+    static async totalExerciseMinutes () {
         const exerciseTotal = await db.query (
             `SELECT SUM(duration) AS total 
-            FROM exercise`
+            FROM exercises`
         )
         
         const amount = exerciseTotal.rows[0]
         return amount
     }
+
+
 }
 
 module.exports = Activity
